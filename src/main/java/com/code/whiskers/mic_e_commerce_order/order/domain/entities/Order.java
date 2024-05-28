@@ -12,6 +12,9 @@ public class Order {
 
     private Data orderDate;
 
+    public Order() {
+
+    }
 
     public Order(Long documentUser, String nameUser, Data orderDate){
         this.documentUser = documentUser;
