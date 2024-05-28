@@ -1,6 +1,7 @@
 package com.code.whiskers.mic_e_commerce_order.order.domain.entities;
 
 import javax.xml.crypto.Data;
+import java.util.Date;
 
 public class Order {
 
@@ -10,19 +11,19 @@ public class Order {
 
     private String nameUser;
 
-    private Data orderDate;
+    private Date orderDate;
 
     public Order() {
 
     }
 
-    public Order(Long documentUser, String nameUser, Data orderDate){
+    public Order(Long documentUser, String nameUser, Date orderDate){
         this.documentUser = documentUser;
         this.nameUser = nameUser;
         this.orderDate = orderDate;
     }
 
-    public Order(Long id, Long documentUser, String nameUser, Data orderDate){
+    public Order(Long id, Long documentUser, String nameUser, Date orderDate){
         this.id = id;
         this.documentUser = documentUser;
         this.nameUser = nameUser;
@@ -41,7 +42,7 @@ public class Order {
         return nameUser;
     }
 
-    public Data getOrderDate() {
+    public Date getOrderDate() {
         return orderDate;
     }
 }

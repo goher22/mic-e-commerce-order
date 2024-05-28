@@ -56,7 +56,7 @@ public class OrderController implements OrderServicesCU {
 
     @Override
     @PutMapping("/{id}")
-    public ResponseEntity<Order> putOrder(Order order, Long id) {
+    public ResponseEntity<Order> putOrder(@RequestBody Order order, @PathVariable Long id) {
         Order updateOrder = orderPortIn.update(order, id);
         if(updateOrder != null) {
             return ResponseEntity.ok(updateOrder);
