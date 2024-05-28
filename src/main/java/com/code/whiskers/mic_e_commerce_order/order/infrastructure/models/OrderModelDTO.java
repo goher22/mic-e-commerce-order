@@ -11,9 +11,13 @@ public class OrderModelDTO extends Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
+    @Column(name = "document_user")
     private Long documentUser;
+    @Column(name = "name_user")
     private String nameUser;
+    @Column(name = "order_date")
     private Data orderDate;
 
     public OrderModelDTO(){

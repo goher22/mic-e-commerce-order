@@ -11,6 +11,7 @@ public class OrderItemModelDTO extends OrderItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "order_id")
     private Long orderId;
     private String product;
     private Integer quantity;
