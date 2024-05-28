@@ -23,10 +23,10 @@ public class OrderItemController implements OrderItemServicesCU {
     @Override
     @GetMapping
     public ResponseEntity<ResultResponse<OrderItem>> getAllOrdersItems(
-            @RequestParam int page,
-            @RequestParam int size,
-            @RequestParam String search,
-            @RequestParam String filter) {
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(required = false) String search,
+            @RequestParam(required = false) String filter) {
         ResultResponse<OrderItem> order = this.orderItemPortIn.consult(page,size,search,filter);
         return ResponseEntity.ok(order);
     }

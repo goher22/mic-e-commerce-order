@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 
 
 @Entity
-@Table(name = "order_items ")
+@Table(name = "order_items")
 public class OrderItemModelDTO extends OrderItem {
 
     @Id
@@ -16,6 +16,10 @@ public class OrderItemModelDTO extends OrderItem {
     private String product;
     private Integer quantity;
     private Double price;
+
+    public OrderItemModelDTO(){
+        super();
+    }
 
     public OrderItemModelDTO(Long orderId, String product, Integer quantity, Double price) {
         super(orderId, product,quantity, price);
@@ -39,9 +43,14 @@ public class OrderItemModelDTO extends OrderItem {
         return id;
     }
 
+
     @Override
     public Long getOrderId() {
         return orderId;
+    }
+
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
 
     @Override
@@ -49,13 +58,25 @@ public class OrderItemModelDTO extends OrderItem {
         return product;
     }
 
+    public void setProduct(String product) {
+        this.product = product;
+    }
+
     @Override
     public Integer getQuantity() {
         return quantity;
     }
 
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
     @Override
     public Double getPrice() {
         return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 }
