@@ -1,4 +1,4 @@
-package com.code.whiskers.mic_e_commerce_order.order.entities;
+package com.code.whiskers.mic_e_commerce_order.order.domain.entities;
 
 import javax.xml.crypto.Data;
 

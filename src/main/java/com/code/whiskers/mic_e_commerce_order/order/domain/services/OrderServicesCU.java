@@ -1,7 +1,7 @@
-package com.code.whiskers.mic_e_commerce_order.order.services;
+package com.code.whiskers.mic_e_commerce_order.order.domain.services;
 
 import com.code.whiskers.mic_e_commerce_order.common.domain.ResultResponse;
-import com.code.whiskers.mic_e_commerce_order.order.entities.Order;
+import com.code.whiskers.mic_e_commerce_order.order.domain.entities.Order;
 import org.springframework.http.ResponseEntity;
 
 public interface OrderServicesCU {
