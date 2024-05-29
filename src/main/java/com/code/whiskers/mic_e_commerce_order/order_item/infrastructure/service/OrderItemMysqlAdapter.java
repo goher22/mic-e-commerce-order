@@ -48,6 +48,21 @@ public class OrderItemMysqlAdapter implements OrderItemPortOut {
     }
 
     @Override
+    public List<OrderItem> consultOrderId(Long orderId) {
+        List<OrderItemModelDTO> orderItems = orderItemRepositoryDTO.findByOrderId(orderId);
+
+        return orderItems.stream()
+                .map(orderItemModelDTO -> new OrderItem(
+                                orderItemModelDTO.getId(),
+                                orderItemModelDTO.getOrderId(),
+                                orderItemModelDTO.getProduct(),
+                                orderItemModelDTO.getQuantity(),
+                                orderItemModelDTO.getPrice()
+                        )
+                ).toList();
+    }
+
+    @Override
     public OrderItem show(Long id) {
         Optional<OrderItemModelDTO> optionalProduct = orderItemRepositoryDTO.findById(id);
         return optionalProduct.orElse(null);

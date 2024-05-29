@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/order_item")
 public class OrderItemController implements OrderItemServicesCU {
@@ -29,6 +31,13 @@ public class OrderItemController implements OrderItemServicesCU {
             @RequestParam(required = false) String filter) {
         ResultResponse<OrderItem> order = this.orderItemPortIn.consult(page,size,search,filter);
         return ResponseEntity.ok(order);
+    }
+
+    @Override
+    @GetMapping("/{orderId}")
+    public ResponseEntity<List<OrderItem>> getIdOrderOrderItem(Long orderId) {
+        List<OrderItem> list = orderItemPortIn.consultOrderId(orderId);
+        return ResponseEntity.ok(list);
     }
 
     @Override

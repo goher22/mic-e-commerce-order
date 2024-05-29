@@ -5,6 +5,8 @@ import com.code.whiskers.mic_e_commerce_order.order_item.application.port.in.Ord
 import com.code.whiskers.mic_e_commerce_order.order_item.application.port.out.OrderItemPortOut;
 import com.code.whiskers.mic_e_commerce_order.order_item.domain.entities.OrderItem;
 
+import java.util.List;
+
 public class OrderItemServices implements OrderItemPortIn {
 
     private final OrderItemPortOut orderItemPortOut;
@@ -21,6 +23,11 @@ public class OrderItemServices implements OrderItemPortIn {
     @Override
     public OrderItem show(Long id) {
         return this.orderItemPortOut.show(id);
+    }
+
+    @Override
+    public List<OrderItem> consultOrderId(Long orderId) {
+        return this.orderItemPortOut.consultOrderId(orderId);
     }
 
     @Override
